@@ -3,7 +3,7 @@ name: Build packages
 on:
   push:
     tags:
-      - v6.**
+      - v*.*
 
 jobs:
   build:
@@ -22,11 +22,11 @@ jobs:
           fetch-depth: 0
 
       - name: Building packages
-        uses: sbwml/openwrt-gh-action-sdk@main
+        uses: sbwml/openwrt-gh-action-sdk@go1.24
         env:
           ARCH: ${{ matrix.arch }}-openwrt-24.10
           FEEDNAME: packages_ci
-          PACKAGES: luci-app-ddns-go
+          PACKAGES: luci-app-fchomo
           NO_REFRESH_CHECK: true
 
       - name: Upload artifacts
