@@ -46,7 +46,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           allowUpdates: true
           replacesArtifacts: true
-          artifacts: "luci-app-alist_${{ matrix.sdk }}-${{ matrix.arch }}.tar.gz"
+          artifacts: "luci-app-fchomo_${{ matrix.sdk }}-${{ matrix.arch }}.tar.gz"
 
       - name: Delete Old Releases
         uses: dev-drprasad/delete-older-releases@master
